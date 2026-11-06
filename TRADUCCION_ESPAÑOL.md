@@ -16,7 +16,7 @@ En esta modalidad se envían título, resumen y observaciones al servicio para t
 ## Comprobaciones y límites
 - Un resultado fallido no se etiqueta como español y no reemplaza el original.
 - Las ediciones hechas durante una solicitud no se sobrescriben.
-- La selección para Word se conserva. No se exporta un informe con traducciones pendientes.
+- La selección para Word se conserva. Word permite exportar con traducciones pendientes y utiliza el texto disponible. Excel y PDF mantienen su preparación en español.
 - La traducción no inventa un resumen si el archivo no contiene texto suficiente. Comprueba nombres, cifras y términos de salud en la fuente.
 - Se probaron con servicios simulados la traducción local, idiomas pendientes, conservación de textos españoles, errores, edición concurrente, selección automática y exportación. No se ha ejecutado una traducción real en tu navegador ni con una clave Azure.
 

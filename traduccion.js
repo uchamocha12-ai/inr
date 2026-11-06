@@ -97,7 +97,12 @@
     if(!paused)translate(candidates()).catch(()=>{});
   };
   const oldGate=prepareSpanishExport;
-  prepareSpanishExport=async function(rows){
+  prepareSpanishExport=async function(rows,options={}){
+    if(options.allowPending){
+      const pending=rows.filter(r=>!ready(r)).length;
+      if(pending)message(`${pending} noticia(s) con traducción pendiente: Word utilizará el texto disponible, sin esperar al traductor.`);
+      return oldGate(rows);
+    }
     const owner=current;
     const selectedBefore=finalExportActive?JSON.stringify(approvedRows().map(r=>r.id).sort()):null;
     try{await translate(rows);}catch{message(lastError+' No se exportó un archivo con textos pendientes de español.');return false;}
